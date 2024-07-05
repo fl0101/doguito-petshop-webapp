@@ -1,0 +1,32 @@
+/* Estilos para o cartão */
+.cartao {
+    background-color: var(--cor-contraste-claro); /* Cor de fundo */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: var(--sombra); 
+    width: 100%; /* Largura total */
+    max-width: 45rem; /* Largura máxima */
+    padding: 1.75rem; /* Espaçamento interno */
+    box-sizing: border-box; /* Modelo de caixa */
+    margin-bottom: 1rem; /* Margem inferior */
+}
+
+/* Estilos para o título dentro do cartão */
+.cartao__titulo {
+    font-size: var(--fonte-tamanho-cartao-titulo); /* Tamanho da fonte */
+    margin-bottom: 1rem;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .cartao {
+        max-width: calc(100% - 2rem); /* Largura máxima ajustada para dispositivos menores */
+        margin-left: auto; /* Centraliza o cartão horizontalmente */
+        margin-right: auto; /* Centraliza o cartão horizontalmente */
+        padding: 1.5rem; /* Redução do espaçamento interno */
+    }
+
+    .cartao__titulo {
+        font-size: calc(var(--fonte-tamanho-cartao-titulo) - 5px); /* Redução do tamanho da fonte */
+        margin-bottom: 0.5rem; /* Redução da margem inferior */
+    }
+}

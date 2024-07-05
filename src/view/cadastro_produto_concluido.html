@@ -1,0 +1,43 @@
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doguito Petshop | Cadastro concluído</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="/css/base/base.css">
+    <link rel="stylesheet" href="/css/componentes/cabecalho.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+    <link rel="stylesheet" href="/css/componentes/cartao.css">
+    <link rel="stylesheet" href="/css/componentes/inputs.css">
+    <link rel="stylesheet" href="/css/componentes/botao.css">
+    <link rel="stylesheet" href="/css/produtos.css">
+</head>
+<body>
+    <header class="cabecalho container">
+        <a href="/produtos" title="Doguito">
+            <img src="/img/doguitoadm.svg" alt="Logo Doguito" class="cabecalho__logo">
+        </a>
+        <nav>
+            <ul class="cabecalho__lista-navegacao">
+                <li class="cabecalho__link" class="cabecalho__link-dash"><a href="/produtos/dashboard">Dashboard</a></li>
+                <li class="cabecalho__link" id="produtos" class="cabecalho__link-prod"><a href="/produtos">Produtos</a>
+                    <ul id="opcoes-produtos">
+                        <li><a href="/produtos/cadastro-produto">Cadastrar Produto</a></li>
+                        <li><a href="/produtos">Explorar Produtos</a></li>
+                    </ul>
+                </li>
+                <li class="cabecalho__link" class="cabecalho__link-pets"><a href="#">Pets</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container flex flex--coluna flex--centro">
+        <section class="cadastro-cartao cartao">
+            <span class="cadastro-cartao__icone-concluido"></span>
+            <h1 class="cadastro-cartao__titulo cartao__titulo">Cadastro de produto realizado com sucesso!</h1>
+            <a href="/produtos/cadastro-produto" class="botao" id="novo-produto">Novo produto</a>
+            <a href="/produtos" class="botao" id="ver-produto">Ver produtos</a>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,73 @@
+/* Estilos para o cabeçalho da página */
+.cabecalho {
+    background-color: var(--cor-contraste-claro); /* Cor de fundo */
+    border-radius: 0 0 10px 10px; /* Bordas arredondadas na parte inferior */
+    box-shadow: var(--sombra);
+    display: flex; /* Exibir como flexbox */
+    justify-content: space-between; /* Alinhamento dos itens no eixo principal */
+    align-items: center; /* Alinhamento dos itens no eixo transversal */
+    height: 4.75rem; /* Altura do cabeçalho */
+    margin-bottom: 2rem; /* Margem inferior */
+}
+
+/* Estilos para a seção de pesquisa no cabeçalho */
+.cabecalho__pesquisa {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para o input de texto na seção de pesquisa */
+.cabecalho__pesquisa input[type="text"] {
+    margin-right: 10px; /* Margem direita para separar o input */
+}
+
+/* Estilos para o logo no cabeçalho */
+.cabecalho__logo {
+    width: 3rem; /* Largura do logo */
+}
+
+/* Estilos para a lista de navegação no cabeçalho */
+.cabecalho__lista-navegacao {
+    display: flex;
+}
+
+/* Estilos para os links de navegação no cabeçalho */
+.cabecalho__link {
+    margin-left: 2rem; /* Margem esquerda para separar os links */
+    border-bottom: 2px solid transparent; /* Borda inferior transparente inicialmente */
+    transition: border-bottom 0.3s ease; /* Transição suave para a borda inferior */
+    margin-bottom: 5px; /* Espaçamento inferior para separar as opções */
+}
+
+/* Estilos para os links de navegação no cabeçalho ao passar o mouse */
+.cabecalho__link:hover {
+    border-bottom: 2px solid lightblue; /* Borda inferior azul claro ao passar o mouse */
+}
+
+.cabecalho__link-dash:hover,
+.cabecalho__link-prod:hover,
+.cabecalho__link-clie:hover,
+.cabecalho__link-pets:hover {
+    border-bottom: 2px solid lightblue; 
+}
+
+/* Media query para telas menores */
+@media screen and (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column; /* Mudança para direção de coluna */
+        height: auto; /* Altura automática */
+        padding: 20px; /* Adiciona espaçamento interno */
+        text-align: center; /* Centraliza texto */
+    }
+
+    .cabecalho__pesquisa,
+    .cabecalho__lista-navegacao {
+        margin-top: 20px; /* Espaçamento superior */
+    }
+
+    .cabecalho__link {
+        margin-left: 4px; /* Remove margem esquerda */
+        margin-right: 4px; /* Remove margem direita */
+        margin-bottom: 10px; /* Adiciona espaçamento inferior */
+    }
+}

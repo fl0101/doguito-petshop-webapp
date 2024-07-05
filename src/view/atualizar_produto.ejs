@@ -1,0 +1,86 @@
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doguito Petshop | Editar produto</title> 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="/css/base/_reset.css">
+        <link rel="stylesheet" href="/css/base/base.css">
+        <link rel="stylesheet" href="/css/componentes/cabecalho.css">
+        <link rel="stylesheet" href="/css/cadastro.css">
+        <link rel="stylesheet" href="/css/componentes/cartao.css">
+        <link rel="stylesheet" href="/css/componentes/inputs.css">
+        <link rel="stylesheet" href="/css/componentes/botao.css">
+        <link rel="stylesheet" href="/css/produtos.css">
+        <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:;">
+    </head>
+    <body>
+        <header class="cabecalho container">
+            <a href="/produtos" title="Doguito">
+                <img src="/img/doguitoadm.svg" alt="Logo Doguito" class="cabecalho__logo">
+            </a>
+            <nav>
+                <ul class="cabecalho__lista-navegacao">
+                    <li class="cabecalho__link" class="cabecalho__link-dash"><a href="/produtos/dashboard">Dashboard</a></li>
+                    <li class="cabecalho__link" id="produtos" class="cabecalho__link-prod"><a href="/produtos">Produtos</a>
+                        <ul id="opcoes-produtos">
+                            <li><a href="/produtos/cadastro-produto">Cadastrar Produto</a></li>
+                            <li><a href="/produtos">Explorar Produtos</a></li>
+                        </ul>
+                    </li>
+                    <li class="cabecalho__link" class="cabecalho__link-pets"><a href="#">Pets</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="container flex flex--centro flex--coluna">
+            <section class="cartao cadastro">
+                <h1 class="cartao__titulo">Atualizar produto</h1>
+                <form action="/produtos/atualizar-produto/:id" method="PUT" enctype="multipart/form-data" class="flex flex--coluna" id="form">
+                    <input type="hidden" name="existingPhoto" id="existingPhoto">
+                    <div class="input-container">
+                        <input name="nome" id="nome" class="input" type="text" placeholder="Nome" data-tipo="nome" minlength="4" maxlength="50" required>
+                        <label class="input-label" for="nome">Nome</label>
+                        <span id="mensagem-erro-nome" class="input-mensagem-erro"></span>
+                    </div>
+                    <div class="input-container">
+                        <input name="preco" id="preco" class="input" placeholder="Preço" data-tipo="preco" min="1.00" required>
+                        <label class="input-label" for="preco">Preço</label>
+                        <span id="mensagem-erro-nome" class="input-mensagem-erro"></span>
+                    </div>
+                    <div class="input-container">
+                        <input class="input" name="descricao" id="descricao" placeholder="Descrição" minlength="10" maxlength="500" required>
+                        <label class="input-label" for="descricao">Descrição</label>
+                        <span id="mensagem-erro-preco" class="input-mensagem-erro"></span>
+                    </div>
+                    <div class="input-container">
+                        <select class="input categoria" name="categoria" id="categoria" required>
+                            <option value="" disabled selected>Escolha uma categoria</option>
+                            <option value="medicamentos">Medicamentos</option>
+                            <option value="roupas">Roupas</option>
+                            <option value="cama">Cama</option>
+                            <option value="limpeza">Limpeza</option>
+                            <option value="brinquedos">Brinquedos</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <label class="input-label" for="categoria">Categoria</label>
+                        <span id="mensagem-erro-categoria" class="input-mensagem-erro"></span>
+                    </div>
+                    <div class="input-container">
+                        <input type="file" name="photo" id="photo" class="input" accept="image/*">
+                        <label class="input-label" for="photo">Imagem</label>
+                        <img id="preview" src="#" alt="Pré-visualização da imagem" style="display: none; width: 100px; height: 100px;"/>
+                    </div>
+                    <button class="botao" id="botao">Atualizar</button>
+                </form>
+            </section>
+        </main>
+        <script type="text/javascript" src="/js/simple-mask-money.js"></script>
+        <script type="text/javascript" src="/js/checkFormCadastro.js"></script>
+        <script type="text/javascript" src="/js/erros.js"></script>
+        <script type="application/json" id="produto-data">
+            <%- JSON.stringify(produto) %>
+        </script>
+        <script type="text/javascript" src="/js/scriptAtualizarProduto.js"></script>
+    </body>
+</html>

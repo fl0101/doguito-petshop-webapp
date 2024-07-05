@@ -1,0 +1,58 @@
+/* Estilos para o campo de pesquisa de produtos */
+.search {
+    padding: 10px 30px 10px 20px; /* Top, Right, Bottom, Left Preenchimento */
+    border: 1px solid #ddddddea; /* Borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    position: relative; /* Posição relativa */
+}
+
+.search input[type="text"] {
+    border: 1px solid #ddddddea; /* Cor da borda normal */
+    padding: 10px; /* Preenchimento */
+    outline: none; /* Remove o contorno ao receber foco */
+}
+
+.search input[type="text"]:focus {
+    border-color: #ddddddea; /* Cor da borda ao receber foco */
+}
+
+.search::placeholder {
+    font-size: 0.987rem; /* Tamanho da fonte do placeholder */
+}
+
+.search-container {
+    position: relative; /* Posição relativa para o posicionamento dos elementos internos */
+}
+
+/* Estilos para o input de texto dentro do container de pesquisa */
+.search-container input[type="text"] {
+    padding-left: 30px; /* Espaçamento interno à esquerda para o ícone de busca */
+}
+
+/* Estilos para o ícone dentro do botão de pesquisa */
+.search-container button i {
+    color: #d1d1d1; /* Cor do ícone */
+    font-size: 20px; /* Tamanho do ícone */
+}
+
+/* Estilos para o botão de pesquisa */
+.search-container button {
+    position: absolute; /* Posição absoluta para ficar sobre o input de texto */
+    left: 0.4rem; /* Distância da esquerda */
+    top: 0; /* Alinhamento ao topo */
+    bottom: 0; /* Alinhamento à base */
+    background: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    outline: none; /* Sem contorno ao focar */
+    cursor: pointer; /* Cursor de ponteiro */
+}
+
+/* Estilos para o input de texto dentro do container de pesquisa */
+.search input[type="text"] {
+    padding: 10px 35px 10px 15px; /* Espaçamento interno para o texto e o ícone */
+    border: 1px solid #e01616ea; /* Cor da borda normal */
+    outline: none; /* Remove o contorno ao receber foco */
+    transition: border-color 0.3s ease; /* Transição suave para a cor da borda */
+    position: relative; /* Posição relativa para o ícone */
+    appearance: none; /* Remove a estilização padrão do navegador */
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doguito Petshop | Produtos</title> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"> 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="/css/base/_reset.css">
+        <link rel="stylesheet" href="/css/base/base.css">
+        <link rel="stylesheet" href="/css/componentes/cabecalho.css">
+        <link rel="stylesheet" href="/css/cadastro.css">
+        <link rel="stylesheet" href="/css/componentes/cartao.css">
+        <link rel="stylesheet" href="/css/componentes/inputs.css">
+        <link rel="stylesheet" href="/css/componentes/botao.css">
+        <link rel="stylesheet" href="/css/componentes/search.css">
+        <link rel="stylesheet" href="/css/produtos.css">
+    </head>
+    <body>
+        <header class="cabecalho container">
+            <a href="/produtos" title="Doguito">
+                <img src="/img/doguitoadm.svg" alt="Logo Doguito" class="cabecalho__logo">
+            </a>
+            <nav>
+                <ul class="cabecalho__lista-navegacao">
+                    <li class="cabecalho__link" class="cabecalho__link-dash"><a href="/produtos/dashboard">Dashboard</a></li>
+                    <li class="cabecalho__link" id="produtos" class="cabecalho__link-prod"><a href="/produtos">Produtos</a>
+                        <ul id="opcoes-produtos">
+                            <li><a href="/produtos/cadastro-produto">Cadastrar Produto</a></li>
+                            <li><a href="/produtos">Explorar Produtos</a></li>
+                        </ul>
+                    </li>
+                    <li class="cabecalho__link" class="cabecalho__link-pets"><a href="#">Pets</a></li>
+                </ul>
+            </nav>
+            <form action="/produtos/buscar" method="GET" id="formPesquisa" class="cabecalho__pesquisa">
+                <div class="search-container">
+                    <input type="text" name="pesquisa" id="campoPesquisa" class="search" placeholder="Buscar produtos">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </header>
+        <div class="escondido resultados produtos-container">
+            <% produtos.forEach((produto, index) => { %>
+                <div class="produto" style="--produto-index: <%= index + 1 %>;">
+                    <div>
+                        <img class="produto__imagem" src="<%= produto.photo ? '/img/produtos/' + produto.photo : '/img/produtos/default-product.jpg' %>" alt="<%= produto.nome %>">
+                    </div>
+                    <div class="informacoes-produto">
+                        <h3 class="produto__nome"><%= produto.nome %></h3>
+                        <p class="produto__preco">R$ <%= (produto.preco / 100).toFixed(2) %></p>
+                        <p class="produto__descricao"><%= produto.descricao %></p>
+                        <div class="botoes-editar-excluir">
+                            <button class="botao-simples botao-simples--editar" onclick="editarProduto('<%= produto.id %>')">Editar</button>
+                            <button class="botao-simples botao-simples--excluir" onclick="excluirProduto('<%= produto.id %>')">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        <div class="produtos-container visivel">
+            <% produtos.forEach((produto, index) => { %>
+                <div class="produto" style="--produto-index: <%= index + 1 %>;">
+                    <div>
+                        <img class="produto__imagem" src="<%= produto.photo ? '/img/produtos/' + produto.photo : '/img/produtos/default-product.jpg' %>" alt="<%= produto.nome %>">
+                    </div>
+                    <div class="informacoes-produto">
+                        <h3 class="produto__nome"><%= produto.nome %></h3>
+                        <p class="produto__preco">R$ <%= (produto.preco / 100).toFixed(2) %></p>
+                        <p class="produto__descricao"><%= produto.descricao %></p>
+                        <div class="botoes-editar-excluir">
+                            <button class="botao-simples botao-simples--editar" onclick="editarProduto('<%= produto.id %>')">Editar</button>
+                            <button class="botao-simples botao-simples--excluir" onclick="excluirProduto('<%= produto.id %>')">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+        <script type="text/javascript" src="/js/app.js"></script>
+        <script type="text/javascript" src="/js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,171 @@
+/* Estilos para o formulário */
+.formulario {
+    margin-top: 2rem; /* Margem superior */
+}
+
+/* Estilos para a legenda do formulário */
+.formulario__legenda {
+    font-size: var(--fonte-tamanho-formulario-fieldset); /* Tamanho da fonte */
+    margin-bottom: 1rem;
+}
+
+/* Estilos para o contêiner do input */
+.input-container {
+    font-weight: var(--fonte-peso-input); /* Peso da fonte */
+    position: relative; /* Posição relativa */
+    margin-bottom: 1rem; /* Margem inferior */
+    display: flex; /* Exibir como flexbox */
+    flex-direction: column; /* Direção da coluna */
+    justify-content: flex-end; /* Justificação no eixo principal */
+    box-sizing: border-box; /* Modelo de caixa */
+}
+
+.required {
+    color: red;
+    margin-left: 5px;
+}
+
+/* Estilos para o input */
+.input {
+    box-sizing: border-box; /* Modelo de caixa */
+    border-bottom: 1px solid var(--cor-secundaria); /* Borda inferior */
+    padding: 1.375rem 0.5rem 0.5rem; /* Preenchimento */
+    height: 3.25rem; /* Altura */
+    width: 100%; /* Largura total */
+}
+
+.categoria{
+    background-color: #ffffff00;
+    border: none;
+    border-bottom: 1px solid var(--cor-secundaria); /* Borda inferior */
+}
+
+.input::placeholder {
+    visibility: hidden; /* Oculta o placeholder */
+    color: #00000000; /* Cor do placeholder */
+}
+
+.input:focus {
+    outline: none; /* Remove o contorno ao receber foco */
+}
+
+.input-label {
+    position: absolute; /* Posição absoluta */
+    top: 1.375rem; /* Distância superior */
+    left: 0.5rem; /* Distância esquerda */
+    font-size: var(--fonte-tamanho-input-label); /* Tamanho da fonte */
+    transition: all .25s; /* Transição */
+}
+
+.input:not(:placeholder-shown) + .input-label, .input:focus + .input-label {
+    font-size: 0.875rem; /* Tamanho da fonte ao ser preenchido */
+    top: 0.25rem; /* Distância superior ao ser preenchido */
+    transition: all .25s;  /* Transição */
+}
+
+/* Estilos para o estado de input inválido */
+.input-container--invalido {
+    margin-bottom: 0.5rem; /* Margem inferior */
+}
+
+.input-container--invalido .input {
+    border: 1px solid var(--cor-aviso); /* Borda vermelha */
+    border-radius: 7px; /* Bordas arredondadas */
+}
+
+.input-container--invalido .input-label {
+    color: var(--cor-aviso); /* Cor do texto */
+}
+
+/* Estilos para a mensagem de erro */
+.input-mensagem-erro {
+    font-size: 0.75rem; /* Tamanho da fonte */
+    position: absolute; /* Posição absoluta */
+    bottom: -1.5rem; /* Distância inferior */
+    left: 0; /* Alinhamento à esquerda */
+    transform: translateY(100%); /* Transformação de translação */
+    transition: color 0.25s, fonr-size 0.25s, transform 0.25s; /* Transições */
+    color: var(--cor-aviso); /* Cor do texto */
+    z-index: 1; /* Z-index */
+}
+
+.input-container--invalido .input-mensagem-erro {
+    color: var(--cor-aviso); /* Cor do texto */
+    display: block; /* Exibir */
+    margin-top: 0.5rem; /* Margem superior */
+    padding-left: 0.5rem; /* Preenchimento à esquerda */ 
+    transform: translateY(0); /* Transformação */
+}
+
+/* Estilos para a área de texto */
+.textarea {
+    box-sizing: border-box; /* Modelo de caixa */
+    border: 1px solid var(--cor-secundaria); /* Borda */
+    padding: 0.5rem; /* Preenchimento */
+    border-radius: 7px; /* Bordas arredondadas */
+    width: 100%; /* Largura total */
+    min-height: 3rem; /* Altura mínima */
+}
+
+/* Estilos para o contêiner da área de texto */
+.textarea-container {
+    position: relative; /* Posição relativa */
+    margin-top: 2rem; /* Margem superior */
+    margin-bottom: 1rem; /* Margem inferior */
+    font-weight: var(--fonte-peso-input); /* Peso da fonte */
+}
+
+.textarea::placeholder { 
+    visibility: hidden; /* Oculta o placeholder */
+}
+
+.textarea:focus {
+    outline: none; /* Remove o contorno ao receber foco */
+}
+
+.textarea-label {
+    position: absolute; /* Posição absoluta */
+    top: 0.5rem; /* Distância superior */
+    left: 0.5rem; /* Distância esquerda */
+    font-size: var(--fonte-tamanho-input-label);
+    transition: all 0.25s; /* Transição */
+}
+
+.textarea:not(:placeholder-shown) + .textarea-label, .textarea:focus + .textarea-label {
+    font-size: 0.875rem; /* Tamanho da fonte ao ser preenchido */
+    top: -1.25rem; /* Distância superior ao ser preenchido */
+    transition: all 0.25s; /* Transição */
+}
+
+/* Estilos para o estado de área de texto inválido */
+.textarea-container--invalido {
+    margin-bottom: 0.5rem; /* Margem inferior */
+}
+
+.textarea-container--invalido .textarea {
+    border: 1px solid var(--cor-aviso); /* Borda vermelha */
+}
+
+.textarea-container--invalido .textarea-label {
+    color: var(--cor-aviso); /* Cor do texto */
+}
+
+/* Estilos para a mensagem de erro da área de texto */
+.textarea-mensagem-erro {
+    display: none; /* Ocultar mensagem de erro inicialmente */
+}
+
+.textarea-container--invalido .textarea-mensagem-erro {
+    display: block; /* Exibir mensagem de erro */   
+    color: var(--cor-aviso); /* Cor do texto */
+    margin-top: 0.5rem; /* Margem superior */
+    padding-left: 0.5rem; /* Preenchimento à esquerda */
+}
+
+/* Regras de mídia para tornar o formulário responsivo */
+@media screen and (max-width: 768px) {
+    .input-label,
+    .textarea-label {
+        font-size: 0.75rem; /* Tamanho da fonte ajustado para telas menores */
+    }
+}

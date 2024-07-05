@@ -1,0 +1,119 @@
+/* Estilos para o container dos produtos */
+.produtos-container {
+    display: grid; /* Exibir como grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /*grid-template-columns: repeat(4, 1fr);  Layout de grid com 4 colunas de tamanho igual */
+    gap: 20px; /* Espaçamento entre os itens */
+    padding: 20px; /* Preenchimento interno */
+} 
+
+/* Estilos para o menu de opções dos produtos */
+#opcoes-produtos {
+    display: none; /* Inicia oculto */
+    position: absolute; /* Posição absoluta */
+    background-color: #fff; /* Cor de fundo */
+    z-index: 1; /* Z-index para sobreposição */
+    padding: 0; /* Preenchimento */
+    margin: 0; /* Margem */
+    list-style-type: none; /* Remover estilo de lista */
+}
+
+/* Mostra o menu de opções ao passar o mouse sobre 'Produtos' */
+#produtos:hover #opcoes-produtos {
+    display: block; /* Mostra ao passar o mouse sobre 'Produtos' */
+}
+
+#opcoes-produtos li {
+    padding: 10px;
+}
+
+#opcoes-produtos li:first-child {
+    border-bottom: none; /* Remove a borda inferior do primeiro item */
+}
+
+#opcoes-produtos li:hover {
+    background-color: #f5f5f5; /* Cor de fundo ao passar o mouse */
+    transition: all 0.3s ease-in-out 0s; /* Transição suave */
+} 
+
+
+/* Estilos para as caixas dos produtos */
+.produto {
+    display: flex; /* Exibir como flexbox */
+    max-width: 21rem;
+    flex-direction: column; /* Direção da coluna */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 8px; /* Raio da borda */
+    overflow: hidden; /* Esconder conteúdo que transborda */
+    position: relative; /* Posição relativa */
+    /*background-color: floralwhite;*/
+    animation: animarProdutos 1s ease-out forwards; /*adiciona classe animar-produto ao container*/
+    animation-delay: calc(0.1s * var(--produto-index));
+}
+
+/* Estilos ao passar o mouse sobre os produtos */
+.produto:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao passar o mouse */
+    border-color: #b9b9b9; /* Cor da borda */
+    transition: all 0.2s ease-in-out 0s; /* Transição suave */
+}
+
+/* Estilo para a imagem do produto */
+.produto__imagem {
+    width: 100%; /* Largura total */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /*Sombra na parte inferior */
+
+}
+
+.produto__imagem img {
+    width: 100%;/* Largura total */
+    height: auto; /* Altura automática */
+    object-fit: cover; /* Ajuste da imagem */
+}
+
+/* Estilos para as informações dos produtos */
+.informacoes-produto {
+    padding: 0 10px 20px 10px; /*inserido*/
+    /* padding: 0 35px 20px 15px; Preenchimento */
+    width: 100%; /* Largura das informações de 80 para 100*/
+    margin-top: 0;  /* Margem superior */
+}
+
+/* Estilos para o nome dos produtos */
+.produto__nome {
+    font-size: 18px; /* Tamanho da fonte */
+    margin-top: 1rem; /* Margem superior  de 2 para 1*/
+    margin-bottom: 10px; /* Margem inferior de 15 para 10*/
+    line-height: 1.2; /* Altura da linha */
+    font-weight: bold; /* Peso da fonte */
+}
+
+/* Estilos para o preço dos produtos */
+.produto__preco {
+    font-weight: bold; /* Peso da fonte */
+    margin-bottom: 10px; /* Margem inferior */
+    color: #0a335e; /* Cor do texto */
+}
+
+/* Estilos para a descrição dos produtos */
+.produto__descricao {
+    font-size: 14px; /* Tamanho da fonte de 14 para 12*/
+    color: #666; /* Cor do texto */
+    margin-bottom: 20px; /* Margem inferior de 20 para 10*/
+}
+
+/* Classe para esconder elementos */
+.escondido {
+    display: none; /* Esconde o elemento */
+}
+
+@keyframes animarProdutos {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

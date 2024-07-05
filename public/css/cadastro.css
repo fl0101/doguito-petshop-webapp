@@ -1,0 +1,92 @@
+/* body {
+    background: #9bd7dbfa;
+} */
+
+/* Estilos para o cabeçalho do cadastro */
+.cadastro-cabecalho {
+    display: flex; /* Exibir como flexbox */
+    flex-direction: column; /* Direção da coluna */
+    align-items: center; /* Alinhar itens ao centro */
+    padding-top: 1rem; /*Preenchimento superior */
+}
+
+/* Estilos para o logotipo do cabeçalho do cadastro */
+.cadastro-cabecalho__logo {
+    width: 2.625rem; /* Largura */
+    margin-bottom: 0.5rem; /* Margem inferior */
+}
+
+/* Estilos para o título do cabeçalho do cadastro */
+.cadastro-cabecalho__titulo {
+    font-family: var(--fonte-familia-logo); /* Família da fonte */
+    font-size: var(--fonte-tamanho-logo); /* Tamanho da fonte */
+    margin-bottom: 1rem; /* Margem inferior */
+}
+
+/* Estilos para o cartão de cadastro */
+.cadastro-cartao {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    text-align: center; /* Alinhamento do texto */
+    margin-top: 2rem;  /*Margem superior */
+}
+
+/* Estilos para o ícone de conclusão no cartão de cadastro */
+.cadastro-cartao__icone-concluido {
+    display: block; /* Exibir como bloco */
+    width: 3.5rem; /* Largura */
+    height: 3.5rem; /* Altura */
+    margin-bottom: 1rem; /* Margem inferior */
+    background-image: url(/img/check-svgrepo.svg); /* Imagem de fundo */
+    background-size: cover; /* Cobrir todo o espaço */
+    background-repeat: no-repeat; /* Não repetir */
+}
+
+/* Estilos para o ícone de erro no cartão de cadastro */
+.cadastro-cartao__icone-erro {
+    display: block;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+    background-image: url(/img/error-svgrepo.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Estilos para o título no cartão de cadastro */
+.cadastro-cartao__titulo {
+    max-width: 20rem; /* Largura máxima */
+}
+
+/* Estilos para telas maiores que 800px */
+@media(min-width: 800px) {
+    .cadastro-cabecalho__logo {
+        width: 5.75rem; /* Largura */
+        margin-bottom: 1rem; /* Margem inferior */
+    }
+
+    .cadastro-cabecalho__titulo {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Estilos responsivos */
+@media(max-width: 800px) {
+    .cadastro-cabecalho__titulo {
+        font-size: 1.2rem; /* Redução do tamanho da fonte */
+        margin-bottom: 1rem; /* Redução da margem inferior */
+    }
+
+    .cadastro-cabecalho__logo {
+        width: 2rem; /* Redução da largura do logo */
+        margin-bottom: 0.5rem; /* Redução da margem inferior */
+    }
+
+    .cadastro-cartao__icone-concluido,
+    .cadastro-cartao__icone-erro {
+        width: 2.5rem; /* Redução da largura do ícone */
+        height: 2.5rem; /* Redução da altura do ícone */
+        margin-bottom: 0.5rem; /* Redução da margem inferior */
+    }
+}

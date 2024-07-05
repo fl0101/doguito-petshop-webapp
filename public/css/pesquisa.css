@@ -1,0 +1,104 @@
+/* Estilos para a seção de resultados e produtos */
+.resultados.produtos-container {
+    display: grid; /* Exibir como grid */
+    grid-template-columns: repeat(4, 1fr); /* Layout de grid com 4 colunas de tamanho igual */
+    gap: 20px; /* Espaçamento entre os itens */
+    padding: 20px; /* Preenchimento interno */
+}
+
+/* Estilos para cada produto na seção de resultados */
+.resultados.produtos-container .produto {
+    display: flex; /* Exibir como flexbox */
+    flex-direction: column; /* Direção da coluna */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 8px; /* Raio da borda */
+    overflow: hidden; /* Esconder conteúdo que transborda */
+    position: relative; /* Posição relativa */
+    max-width: 300px; /* Limite máximo de largura para os produtos adicionado*/
+    width: 100%; /* Garante que os produtos não ultrapassem o limite adicionado*/
+    margin: auto; /* Centraliza os produtos na tela adicionado*/
+}
+
+/* Estilos para o hover nos produtos */
+.resultados.produtos-container .produto:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao passar o mouse */
+    border-color: #b9b9b9; /* Sombra ao passar o mouse */
+    transition: all 0.2s ease-in-out 0s; /* Transição suave */
+}
+
+/* Estilos para a imagem do produto */
+.resultados.produtos-container .produto .produto__imagem {
+    width: 100%; /* Largura da imagem de 40 para 100*/
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Estilos para a imagem dentro do produto */
+.resultados.produtos-container .produto .produto__imagem img {
+    width: 100%; /* Largura total */
+    height: auto; /* Altura automática */
+    object-fit: cover; /* Ajuste da imagem */
+    max-width: 100%;
+}
+
+/* Estilos para as informações do produto */
+.resultados.produtos-container .produto .informacoes-produto {
+    padding: 10px; /* Preenchimento interno de 20 para 10*/
+    width: 100%; /* Largura das informações de 60 para 100*/
+    margin-top: auto; /* Margem superior automática */
+}
+
+/* Estilos para o nome do produto */
+.resultados.produtos-container .produto .produto__nome {
+    font-size: 16px; /* Tamanho da fonte de 18 para 16*/
+    margin-top: 0; /* Margem superior */
+    margin-bottom: 10px; /* Margem inferior de 15 para 10*/
+    line-height: 1.2; /* Altura da linha */
+}
+
+/* Estilos para o preço do produto */
+.resultados.produtos-container .produto .produto__preco {
+    font-weight: bold; /* Peso da fonte */
+    margin-bottom: 3px; /* Margem inferior de 5 para 3*/
+    color: #0a335e; /* Cor do texto */
+}
+
+/* Estilos para a descrição do produto */
+.resultados.produtos-container .produto .produto__descricao {
+    font-size: 12px; /*de 14 para 12*/
+    color: #666;
+}
+
+/* Estilo para esconder a div inicialmente */
+.resultados.produtos-container.escondido {
+    display: none; /* Esconder elemento */
+}
+
+/* Media query para telas menores */
+@media screen and (max-width: 768px) {
+    .resultados.produtos-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+    }
+
+    .resultados.produtos-container .produto .produto__imagem {
+        width: 100%; /* Imagem ocupa largura total em telas menores */
+    }
+
+    .resultados.produtos-container .produto .informacoes-produto {
+        width: 100%; /* Informações ocupam largura total em telas menores */
+    }
+
+    .resultados.produtos-container .produto .produto__nome {
+        font-size: 14px; /* Redução do tamanho da fonte */
+        margin-bottom: 5px; /* Redução da margem inferior */
+    }
+
+    .resultados.produtos-container .produto .produto__preco {
+        margin-bottom: 2px; /* Redução da margem inferior */
+    }
+
+    .resultados.produtos-container .produto .produto__descricao {
+        font-size: 10px; /* Redução do tamanho da fonte */
+    }
+}

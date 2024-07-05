@@ -1,0 +1,64 @@
+/* Estilos para botões comuns */
+.botao {
+    display: block; /* Define como bloco para ocupar a largura total disponível */
+    background-color: var(--cor-primaria); 
+    border-radius: 7px; /* Borda arredondada */
+    width: 100%; /* Largura total */
+    margin-top: 1rem; /* Espaçamento superior */
+    max-width: 15rem; /* Largura máxima */
+    padding: 1.1rem; /* Espaçamento interno */
+    box-sizing: border-box; /* Considera o padding na largura total */
+    color: var(--cor-contraste-claro); /* Cor do texto usando variável */
+    font-size: var(--fonte-tamanho-botao); /* Tamanho da fonte usando variável */
+    align-self: center; /* Centraliza verticalmente */
+    text-align: center; /* Centraliza horizontalmente */
+    cursor: pointer; /* Mostra o cursor de ponteiro ao passar */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+
+/* Estilos de botão ao passar o mouse */
+.botao:hover {
+    background-color: #0138ce; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilos para botões simples */
+.botao-simples {
+    border: none; /* Sem borda */
+    background-color: unset; /* Fundo transparente */
+    position: relative; /* Posição relativa para elementos filhos posicionados absolutamente */
+}
+
+/* Estilos específicos para botões de adicionar */
+.botao-simples--adicionar {
+    color: var(--cor-primaria); /* Cor do texto usando variável */
+}
+
+/* Estilos específicos para botões de excluir */
+.botao-simples--excluir {
+    color: var(--cor-aviso); /* Cor do texto usando variável */ 
+    position: absolute; /* Posição absoluta */
+    bottom: 10px; /* Distância da base */
+    right: 10px; /* Distância da direita */
+    z-index: 1; /* Z-index para empilhamento */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+
+/* Estilos de botão de excluir ao passar o mouse */
+.botao-simples--excluir:hover {
+    background-color: #f3b5b5; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilos específicos para botões de editar */
+.botao-simples--editar {
+    color: var(--cor-sucesso); /* Cor do texto usando variável */
+    position: absolute; /* Posição absoluta */
+    bottom: 10px; /* Distância do base */
+    right: 70px; /* Distância da direita */
+    z-index: 1; /* Z-index para empilhamento */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+
+/* Estilos de botão de editar ao passar o mouse */
+.botao-simples--editar:hover {
+    background-color: #9afdaf; /* Cor de fundo ao passar o mouse */
+}
